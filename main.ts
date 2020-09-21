@@ -8,6 +8,7 @@ sprites.onOverlap(SpriteKind.IceCream, SpriteKind.Seagull, function (sprite, oth
     sprite.destroy()
     otherSprite.destroy()
     info.changeScoreBy(10)
+    music.playMelody("G C5 - - - - - - ", 500)
 })
 sprites.onDestroyed(SpriteKind.IceCream, function (sprite) {
     iceCreamCount += -1
@@ -129,6 +130,7 @@ info.onLifeZero(function () {
 sprites.onOverlap(SpriteKind.Bus, SpriteKind.Poop, function (sprite, otherSprite) {
     otherSprite.destroy()
     info.changeLifeBy(-1)
+    music.playMelody("C - D C - - - - ", 1000)
 })
 let poop: Sprite = null
 let seagullList: Sprite[] = []
