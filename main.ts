@@ -266,22 +266,22 @@ game.onUpdateInterval(700, function () {
     for (let value of seagullList) {
         if (Math.percentChance(50)) {
             poop = sprites.createProjectileFromSprite(img`
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . c c . . . . . . 
-                . . . . . c a a a a . . . . . . 
-                . . . . . a a f f b a . . . . . 
-                . . . . c a b f f c b . . . . . 
-                . . . . c b b b a f c b . . . . 
-                . . . . c b a c a b b b . . . . 
-                . . . . . b b f f a a c . . . . 
-                . . . . . . a a b b c . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
+                . . . . . . . . f . . . . . . . 
+                . . . . . . . . f . . . . . . . 
+                . . . . . . . f 1 f . . . . . . 
+                . . . . . . . f 1 f . . . . . . 
+                . . . . . . . f 1 f . . . . . . 
+                . . . . . . f 1 d 1 f . . . . . 
+                . . . . . . f 1 d 1 f . . . . . 
+                . . . . . . f 1 d 1 f . . . . . 
+                . . . . . f 1 d d d 1 f . . . . 
+                . . . . . f 1 d d d 1 f . . . . 
+                . . . . f 1 1 f d f 1 1 f . . . 
+                . . . f 1 1 1 1 f 1 1 1 1 f . . 
+                . . . f 1 1 f 1 1 1 f 1 1 f . . 
+                . . . . f 1 1 f 1 f 1 1 f . . . 
+                . . . . . f f 1 f 1 f f . . . . 
+                . . . . . . . f f f . . . . . . 
                 `, value, 0, 50)
             poop.setKind(SpriteKind.Poop)
         }

@@ -120,22 +120,22 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 `</field></shadow></value></block></next></block></next></block></next></block></statement></block><block type="gameinterval" id="7]h}kW;}T_s-:OVb$|Yy" x="433" y="20"><value name="period"><shadow type="timePicker" id="fTzUoB7DeF=;gFO7,pRM"><field name="ms">700</field></shadow></value><statement name="HANDLER"><block type="variables_set" id="DJI4NRjWdsp5I}0h.$]Q"><field name="VAR" id="|qwa^I0ms|L,(}1gkiVP">seagullList</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="allOfKind" id="VZy3.[9dAUdm=qJ3CDP$"><value name="kind"><shadow type="spritekind" id="M}+h2k1%NY%y6omX4`Is"><field name="MEMBER">Seagull</field></shadow></value></block></value><next><block type="pxt_controls_for_of" id="k)@i1b3.6z}EOrdLK;{J"><value name="VAR"><shadow type="variables_get_reporter" id="yS9bW-yl%!HI::Wi9){q"><field name="VAR" id="W5%tr]U2QWvL7B6:*R,S">value</field></shadow></value><value name="LIST"><block type="variables_get" id=")$9$f+)!E_~rq/)_BIy7"><field name="VAR" id="|qwa^I0ms|L,(}1gkiVP">seagullList</field></block></value><statement name="DO"><block type="controls_if" id="h`92?4+HugS^3P55AvWT"><value name="IF0"><shadow type="logic_boolean"><field name="BOOL">TRUE</field></shadow><block type="percentchance" id="?4C`8BIQ%6aJrIU[aVsc"><value name="percentage"><shadow type="math_number_minmax" id="QT6zqcvz.+[L?3#@,uD("><mutation min="0" max="Infinity" label="Number" precision="0"/><field name="SLIDER">50</field></shadow></value></block></value><statement name="DO0"><block type="variables_set" id="n(N;Quazmc_JBSwdnkoi"><field name="VAR" id="h7D.b+CXIaYO)nSyM9^z">poop</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreateprojectilefromsprite" id="kkc88Pj?Fdq:jUkBZwSn"><value name="img"><shadow type="screen_image_picker" id="@y]PV9:]|x0V-7{D,rx,"><field name="img">img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . c c . . . . . . 
-. . . . . c a a a a . . . . . . 
-. . . . . a a f f b a . . . . . 
-. . . . c a b f f c b . . . . . 
-. . . . c b b b a f c b . . . . 
-. . . . c b a c a b b b . . . . 
-. . . . . b b f f a a c . . . . 
-. . . . . . a a b b c . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . . . f . . . . . . . 
+. . . . . . . . f . . . . . . . 
+. . . . . . . f 1 f . . . . . . 
+. . . . . . . f 1 f . . . . . . 
+. . . . . . . f 1 f . . . . . . 
+. . . . . . f 1 d 1 f . . . . . 
+. . . . . . f 1 d 1 f . . . . . 
+. . . . . . f 1 d 1 f . . . . . 
+. . . . . f 1 d d d 1 f . . . . 
+. . . . . f 1 d d d 1 f . . . . 
+. . . . f 1 1 f d f 1 1 f . . . 
+. . . f 1 1 1 1 f 1 1 1 1 f . . 
+. . . f 1 1 f 1 1 1 f 1 1 f . . 
+. . . . f 1 1 f 1 f 1 1 f . . . 
+. . . . . f f 1 f 1 f f . . . . 
+. . . . . . . f f f . . . . . . 
 `</field></shadow></value><value name="sprite"><shadow type="variables_get" id="4VlmBBic`JS-Icc/4VGC"><field name="VAR" id="W5%tr]U2QWvL7B6:*R,S">value</field></shadow></value><value name="vx"><shadow type="spriteSpeedPicker" id="^US_l;N%N2UCCnw$)YKa"><field name="speed">0</field></shadow></value><value name="vy"><shadow type="spriteSpeedPicker" id="7=z2QAP~;}@t%yB~Ja#k"><field name="speed">50</field></shadow></value></block></value><next><block type="spritesetkind" id="m|1a0EUZZp2vKm?wJPT?"><value name="sprite"><block type="variables_get" id="|tUgO*~)1^:e)1iauijm"><field name="VAR" id="h7D.b+CXIaYO)nSyM9^z">poop</field></block></value><value name="kind"><shadow type="spritekind" id=":H|bQ!EJL~HKA[V-#/DB"><field name="MEMBER">Poop</field></shadow></value></block></next></block></statement></block></statement></block></next></block></statement></block><block type="function_definition" id="e2Lmk5Fb:sa7]QnF3-!I" x="1377" y="20"><mutation name="createSeagull" functionid="RM0k.~,QyF-Q{kICB[GP"/><field name="function_name">createSeagull</field><statement name="STACK"><block type="variables_set" id="Az#IoyVA0A`tieBMN-be"><field name="VAR" id="4cXg2J?AuZRV9+Ab4Z[Y">seagull</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="W1B=CYvFER63{,uQDP_)"><value name="img"><shadow type="screen_image_picker" id="#1MnEQ3Fz:8E~5IE.6A$"><field name="img">img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
