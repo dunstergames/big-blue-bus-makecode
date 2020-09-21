@@ -80,38 +80,22 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (iceCreamCount < 3) {
         iceCreamCount += 1
         iceCream = sprites.createProjectileFromSprite(img`
-            .....fff.......
-            ....fbf........
-            ...fbb1ff......
-            ..fbb1111f.....
-            .fbb111b11f....
-            .fb111b1f11f...
-            .f111fffb111f..
-            f1fffbb111111f.
-            f1bb1111111fff.
-            f111111ffffb1f.
-            111ffffbbb1111f
-            f111bbb1111111f
-            f111111111111bf
-            bf111111ffff1f.
-            11111fffbbb1bf.
-            fffffb11111bf..
-            fbbb111bbbbf4f.
-            .ffffbbffff4df.
-            .f4dfffd444d4f.
-            .fd444d4d4d44f.
-            ..fd4d444d44f..
-            ..f4d444d4d4f..
-            ..fd4d4d444df..
-            ...f44d444df...
-            ...f4d4d4d4f...
-            ...fd444d44f...
-            ....f44d4df....
-            ....f4d444f....
-            .....f444f.....
-            .....fd44f.....
-            ......fdf......
-            .......f.......
+            . . . . . . . 
+            . . . . b . . 
+            . . . b b b . 
+            . . b 1 1 b . 
+            . . b b d d . 
+            . b 1 1 1 1 b 
+            b 1 1 d b b b 
+            b d d 1 1 1 b 
+            . b b b d d . 
+            4 4 4 4 4 4 e 
+            . e 4 e e 4 . 
+            . e 4 4 4 e . 
+            . . e 4 e . . 
+            . . e 4 e . . 
+            . . . e . . . 
+            . . . . . . . 
             `, bus, 0, -50)
         iceCream.setKind(SpriteKind.IceCream)
     }
