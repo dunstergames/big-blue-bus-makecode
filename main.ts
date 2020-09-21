@@ -83,6 +83,9 @@ function createBus () {
     bus.setFlag(SpriteFlag.StayInScreen, true)
     controller.moveSprite(bus, 100, 0)
 }
+info.onLifeZero(function () {
+    game.over(false, effects.dissolve)
+})
 sprites.onOverlap(SpriteKind.Bus, SpriteKind.Poop, function (sprite, otherSprite) {
     otherSprite.destroy()
     info.changeLifeBy(-1)
