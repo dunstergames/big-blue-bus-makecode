@@ -2,6 +2,7 @@ namespace SpriteKind {
     export const IceCream = SpriteKind.create()
     export const Bus = SpriteKind.create()
     export const Seagull = SpriteKind.create()
+    export const Poop = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.IceCream, SpriteKind.Seagull, function (sprite, otherSprite) {
     sprite.destroy()
@@ -82,12 +83,45 @@ function createBus () {
     bus.setFlag(SpriteFlag.StayInScreen, true)
     controller.moveSprite(bus, 100, 0)
 }
+sprites.onOverlap(SpriteKind.Bus, SpriteKind.Poop, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeLifeBy(-1)
+})
+let poop: Sprite = null
+let seagullList: Sprite[] = []
 let bus: Sprite = null
 let iceCream: Sprite = null
 let seagull: Sprite = null
 let iceCreamCount = 0
 createBus()
 info.setScore(0)
+info.setLife(3)
 game.onUpdateInterval(1000, function () {
     createSeagull()
+})
+game.onUpdateInterval(500, function () {
+    seagullList = sprites.allOfKind(SpriteKind.Seagull)
+    for (let value of seagullList) {
+        if (Math.percentChance(25)) {
+            poop = sprites.createProjectileFromSprite(img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . c c . . . . . . 
+                . . . . . c a a a a . . . . . . 
+                . . . . . a a f f b a . . . . . 
+                . . . . c a b f f c b . . . . . 
+                . . . . c b b b a f c b . . . . 
+                . . . . c b a c a b b b . . . . 
+                . . . . . b b f f a a c . . . . 
+                . . . . . . a a b b c . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `, value, 0, 50)
+            poop.setKind(SpriteKind.Poop)
+        }
+    }
 })
