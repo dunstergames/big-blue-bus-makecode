@@ -96,13 +96,10 @@ let iceCreamCount = 0
 createBus()
 info.setScore(0)
 info.setLife(3)
-game.onUpdateInterval(1000, function () {
-    createSeagull()
-})
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(700, function () {
     seagullList = sprites.allOfKind(SpriteKind.Seagull)
     for (let value of seagullList) {
-        if (Math.percentChance(25)) {
+        if (Math.percentChance(50)) {
             poop = sprites.createProjectileFromSprite(img`
                 . . . . . . . . . . . . . . . . 
                 . . . . . . . . . . . . . . . . 
@@ -124,4 +121,7 @@ game.onUpdateInterval(500, function () {
             poop.setKind(SpriteKind.Poop)
         }
     }
+})
+game.onUpdateInterval(1000, function () {
+    createSeagull()
 })
