@@ -16,25 +16,65 @@ function createSeagull () {
     seagull = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . c c . c c . . . . . . . . 
-        . . f 3 c c 3 c c c . . . . . . 
-        . f c 3 b c 3 b c c c . . . . . 
-        f c b b b b b b b b f f . . . . 
-        c c 1 b b b 1 b b b f f . . . . 
-        c b b b b b b b b c f f f . . . 
-        c b 1 f f 1 c b b f f f f . . . 
-        f f 1 f f 1 f b c c b b b . . . 
-        f f f f f f f b f c c c c . . . 
-        f f 2 2 2 2 f b f b b c c c . . 
-        . f 2 2 2 2 2 b c c b b c . . . 
-        . . f 2 2 2 b f f c c b b c . . 
-        . . . f f f f f f f c c c c c . 
-        . . . . . . . . . . . . c c c c 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . f f f f . . 
+        . . . . . . . . . f f b b f . . 
+        . . . . . . . . f f b b c f . . 
+        . . . . . . . f f b b b f . . . 
+        . . . . . f f f b b b c f . . . 
+        . . . . f 1 f f b b b f f . . . 
+        . f f f 1 1 1 c c c c 1 f f f f 
+        f 5 5 5 1 f 1 1 1 1 1 1 1 b b f 
+        f 5 4 4 1 1 1 1 1 1 1 b b f f . 
+        f f f f b b b b b b b f f . . . 
+        . . . . f f f f f f f 5 5 f . . 
+        . . . . . . . . . . f f f . . . 
+        . . . . . . . . . . . . . . . . 
         `, SpriteKind.Seagull)
     seagull.x = scene.screenWidth()
     seagull.top = 0 + randint(0, 20)
     seagull.setVelocity(randint(-100, -50), 0)
     seagull.setFlag(SpriteFlag.AutoDestroy, true)
+    animation.runImageAnimation(
+    seagull,
+    [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . f f f f . . 
+        . . . . . . . . . f f b b f . . 
+        . . . . . . . . f f b b c f . . 
+        . . . . . . . f f b b b f . . . 
+        . . . . . f f f b b b c f . . . 
+        . . . . f 1 f f b b b f f . . . 
+        . f f f 1 1 1 c c c c 1 f f f f 
+        f 5 5 5 1 f 1 1 1 1 1 1 1 b b f 
+        f 5 4 4 1 1 1 1 1 1 1 b b f f . 
+        f f f f b b b b b b b f f . . . 
+        . . . . f f f f f f f 5 5 f . . 
+        . . . . . . . . . . f f f . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f . . . . . . . . . 
+        . . . . f 1 f f f f f f . . . . 
+        . f f f 1 1 1 c c c c 1 f f f f 
+        f 5 5 5 1 f 1 f b b b f 1 b b f 
+        f 5 4 4 1 1 1 f b b b c f f f . 
+        f f f f b b b f f b b b f . . . 
+        . . . . f f f f f f b b c f . . 
+        . . . . . . . . . f f b b f . . 
+        . . . . . . . . . . f f f f . . 
+        `],
+    200,
+    true
+    )
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (iceCreamCount < 3) {
