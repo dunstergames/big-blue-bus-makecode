@@ -3,6 +3,11 @@ namespace SpriteKind {
     export const Bus = SpriteKind.create()
     export const Seagull = SpriteKind.create()
 }
+sprites.onOverlap(SpriteKind.IceCream, SpriteKind.Seagull, function (sprite, otherSprite) {
+    sprite.destroy()
+    otherSprite.destroy()
+    info.changeScoreBy(10)
+})
 sprites.onDestroyed(SpriteKind.IceCream, function (sprite) {
     iceCreamCount += -1
 })
@@ -82,6 +87,7 @@ let iceCream: Sprite = null
 let seagull: Sprite = null
 let iceCreamCount = 0
 createBus()
+info.setScore(0)
 game.onUpdateInterval(1000, function () {
     createSeagull()
 })
