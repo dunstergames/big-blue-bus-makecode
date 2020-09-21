@@ -1,27 +1,12 @@
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (projectileCount < 3) {
-        projectileCount += 1
-        projectile = sprites.createProjectileFromSprite(img`
-            . . . . . 3 3 b 3 3 d d 3 3 . . 
-            . . . . 3 1 1 d 3 d 1 1 1 1 3 . 
-            . . . 3 d 1 1 1 d 1 1 1 d 3 1 3 
-            . . 3 d d 1 1 1 d d 1 1 1 3 3 3 
-            . 3 1 1 d 1 1 1 1 d d 1 1 b . . 
-            . 3 1 1 1 d 1 1 1 1 1 d 1 1 3 . 
-            . b d 1 1 1 d 1 1 1 1 1 1 1 3 . 
-            . 4 b 1 1 1 1 d d 1 1 1 1 d 3 . 
-            . 4 4 d 1 1 1 1 1 1 d d d b b . 
-            . 4 d b d 1 1 1 1 1 1 1 1 3 . . 
-            4 d d 5 b d 1 1 1 1 1 1 1 3 . . 
-            4 5 d 5 5 b b d 1 1 1 1 d 3 . . 
-            4 5 5 d 5 5 d b b b d d 3 . . . 
-            4 5 5 5 d d d d 4 4 b 3 . . . . 
-            . 4 5 5 5 4 4 4 . . . . . . . . 
-            . . 4 4 4 . . . . . . . . . . . 
-            `, bus, 0, -50)
-    }
+namespace SpriteKind {
+    export const IceCream = SpriteKind.create()
+    export const Bus = SpriteKind.create()
+    export const Seagull = SpriteKind.create()
+}
+sprites.onDestroyed(SpriteKind.IceCream, function (sprite) {
+    iceCreamCount += -1
 })
-function createEnemy () {
+function createSeagull () {
     seagull = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -39,12 +24,37 @@ function createEnemy () {
         . . f 2 2 2 b f f c c b b c . . 
         . . . f f f f f f f c c c c c . 
         . . . . . . . . . . . . c c c c 
-        `, SpriteKind.Enemy)
+        `, SpriteKind.Seagull)
     seagull.x = scene.screenWidth()
     seagull.top = 0 + randint(0, 20)
     seagull.setVelocity(randint(-100, -50), 0)
+    seagull.setFlag(SpriteFlag.AutoDestroy, true)
 }
-function createPlayer () {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (iceCreamCount < 3) {
+        iceCreamCount += 1
+        iceCream = sprites.createProjectileFromSprite(img`
+            . . . . . 3 3 b 3 3 d d 3 3 . . 
+            . . . . 3 1 1 d 3 d 1 1 1 1 3 . 
+            . . . 3 d 1 1 1 d 1 1 1 d 3 1 3 
+            . . 3 d d 1 1 1 d d 1 1 1 3 3 3 
+            . 3 1 1 d 1 1 1 1 d d 1 1 b . . 
+            . 3 1 1 1 d 1 1 1 1 1 d 1 1 3 . 
+            . b d 1 1 1 d 1 1 1 1 1 1 1 3 . 
+            . 4 b 1 1 1 1 d d 1 1 1 1 d 3 . 
+            . 4 4 d 1 1 1 1 1 1 d d d b b . 
+            . 4 d b d 1 1 1 1 1 1 1 1 3 . . 
+            4 d d 5 b d 1 1 1 1 1 1 1 3 . . 
+            4 5 d 5 5 b b d 1 1 1 1 d 3 . . 
+            4 5 5 d 5 5 d b b b d d 3 . . . 
+            4 5 5 5 d d d d 4 4 b 3 . . . . 
+            . 4 5 5 5 4 4 4 . . . . . . . . 
+            . . 4 4 4 . . . . . . . . . . . 
+            `, bus, 0, -50)
+        iceCream.setKind(SpriteKind.IceCream)
+    }
+})
+function createBus () {
     bus = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . 6 6 6 6 6 6 6 6 . . . . 
@@ -62,19 +72,16 @@ function createPlayer () {
         . . f f f f f 8 8 f f f f f 8 . 
         . . . f f f . . . . f f f f . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+        `, SpriteKind.Bus)
     bus.bottom = scene.screenHeight()
     bus.setFlag(SpriteFlag.StayInScreen, true)
     controller.moveSprite(bus, 100, 0)
 }
-sprites.onDestroyed(SpriteKind.Projectile, function (sprite) {
-    projectileCount += -1
-})
-let seagull: Sprite = null
 let bus: Sprite = null
-let projectile: Sprite = null
-let projectileCount = 0
-createPlayer()
+let iceCream: Sprite = null
+let seagull: Sprite = null
+let iceCreamCount = 0
+createBus()
 game.onUpdateInterval(1000, function () {
-    createEnemy()
+    createSeagull()
 })
