@@ -130,6 +130,7 @@ info.onLifeZero(function () {
 sprites.onOverlap(SpriteKind.Bus, SpriteKind.Poop, function (sprite, otherSprite) {
     otherSprite.destroy()
     info.changeLifeBy(-1)
+    bus.startEffect(effects.ashes, 1000)
     music.playMelody("C - D C - - - - ", 1000)
 })
 let poop: Sprite = null
